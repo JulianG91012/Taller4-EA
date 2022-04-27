@@ -25,7 +25,7 @@ public class Taller4 {
     {
         boolean cont = false; //Continuidad del ciclo
         Scanner scn = new Scanner(System.in); //Lectura de teclado
-        ST<String, Bag> st =  new ST<String, Bag>(); //Tabla de simbolos
+        ST<String, Bag<Repositorio>> st =  new ST<String, Bag<Repositorio>>(); //Tabla de simbolos
         Bag<Repositorio> bag = new Bag<Repositorio>(); //Bolsa de repositorios
         
         //Llenado del arraylist de repositorios
@@ -33,11 +33,25 @@ public class Taller4 {
         String res = scn.nextLine();
         ArrayList<Repositorio> repos = LeerDataset(res);
         
+        // crear una tabla de simbolos con key = user name y value = bag con los repositorios de cada usuario
+        for(Repositorio re: repos){
+        Bag<Repositorio> aux = new Bag<Repositorio>(); //bolsa auxiliar, se crea vacía
+         if(st.contains(re.user_name)){
+                st.get(re.user_name).add(re); //si el usuario ya existe en la tabla, solo añade re a la bolsa
+                //st.put(re.user_name, st.get(re.user_name);
+            }else{
+            aux.add(re);
+            st.put(re.user_name,aux); //crea una fila en la tabla con re 
+            }
+                  // C:\\Users\\JaegerJK\\Documents\\GitHub\\Taller4-EA\\github-dataset-fixed.txt
+        }
+        
+        consultaPorUsuario(st);
+        
         String usuarioAnterior, nuevoUsuario;
         //Llenado de la bolsa de los usuarios
         usuarioAnterior = repos.get(0).user_name;
-        
-        
+        /*
         for(int i = 0; i<repos.size(); i++){
             if(!repos.get(i).user_name.equals(usuarioAnterior)){
                 nuevoUsuario = repos.get(i).user_name;
@@ -48,19 +62,37 @@ public class Taller4 {
                 }
             }
         }
-        
+        */
         StdOut.println("Ingrese el nombre del usuario: " );
         res = scn.nextLine();
-        
-        
-        for(Repositorio re: repos){
-            st.put(re.user_name, bag);
-        }
-            
+           
     }
+    static void consultaPorUsuario(ST<String, Bag<Repositorio>> st){
+        int nro_rep;
+        int nro_estrellas;
+        int nro_suscripciones; 
+        int open_issues;
+        ST<String, Integer> aux = new ST<String, Integer>();
+        for (String user_name : st.keys()){
+            nro_rep = 0;
+            nro_estrellas = 0;
+            nro_suscripciones = 0; 
+            open_issues = 0; 
+            for (Repositorio rep : st.get(user_name)){
+                nro_rep++;
+                nro_estrellas =+ rep.stars;
+                nro_suscripciones =+ rep.suscribers;
+                open_issues =+ rep.open_issues;
+            }
+            StdOut.println("El usuario " + user_name + " tiene: ");
+            StdOut.println("Repositorios: " + nro_rep);
+            StdOut.println("Un total de estrellas de: " + nro_estrellas);
+            StdOut.println("Un total de suscriptores: " + nro_suscripciones);
+            StdOut.println("Un promedio de " + (open_issues/nro_rep) + " de open issues");
+            StdOut.println("");
+        }
     
-    
-    
+    }
     
     public static ArrayList<Repositorio> LeerDataset(String ruta) throws ParseException, IOException{
         
@@ -96,5 +128,7 @@ public class Taller4 {
         
         System.out.println(repositorios.get(0));
         return repositorios;
+        
+        
     }
 }
