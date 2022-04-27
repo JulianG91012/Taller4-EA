@@ -1,7 +1,6 @@
-id,repo_name,full_name,username,language,type,created,forks,stars,open_issues,subscribers
 14098069,free-programming-books-zh_CN,justjavac/free-programming-books-zh_CN,justjavac,null,User,2013-11-04 01:59:19,25155,87946,28,5917 
 24195339,angular,angular/angular,angular,TypeScript,Organization,2014-09-18 16:12:01,21048,80075,1598,3109 
-54173593,storybook,storybookjs/storybook,storybookjs,TypeScript,Organization,2016-03-18 04:23:44,7166,69227,1714,929 
+54173593,storybook,storybookjs/storybook,storybookjs,TypeScript,Organization,2016-03-18 04:23:44,7166,69227,1714,929
 52631841,realworld,gothinkster/realworld,gothinkster,Shell,Organization,2016-02-26 20:49:53,5937,64393,64,1579 
 460078,angular.js,angular/angular.js,angular,JavaScript,Organization,2010-01-06 00:34:37,28373,59529,469,3874 
 147350463,33-js-concepts,leonardomso/33-js-concepts,leonardomso,JavaScript,User,2018-09-04 13:27:04,6411,47595,12,1291 
