@@ -35,7 +35,7 @@ public class Repositorio
         this.user_name = user_name;
         this.language = language;
         this.type = type;
-        this.created = created 
+        this.created = created; 
         this.forks = forks;
         this.stars = stars;
         this.open_issues = open_issues;
