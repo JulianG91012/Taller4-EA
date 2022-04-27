@@ -4,6 +4,8 @@
  */
 package taller4;
 
+import java.util.Date;
+
 /**
  *
  * @author Julian Gómez
@@ -16,7 +18,7 @@ public class Repositorio
     private String user_name;
     private String language;
     private String type;
-    //private DateTime created;
+    private Date created;
     private int forks;
     private int stars;
     private int open_issues;
@@ -24,7 +26,7 @@ public class Repositorio
     
     //Agregar el tipo de dato fecha
     public Repositorio(int id, String repo_name, String full_name, String user_name, String language, 
-            String type, int stars, int open_issues, int suscribers)
+            String type, Date created,int forks, int stars, int open_issues, int suscribers)
     {
         this.id = id;
         this.repo_name = repo_name;
@@ -32,7 +34,7 @@ public class Repositorio
         this.user_name = user_name;
         this.language = language;
         this.type = type;
-        //this.created = created 
+        this.created = created;
         this.forks = forks;
         this.stars = stars;
         this.open_issues = open_issues;
