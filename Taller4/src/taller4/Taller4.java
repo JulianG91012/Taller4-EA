@@ -23,13 +23,15 @@ public class Taller4 {
         do{
         StdOut.println("Ingrese la ruta del archivo: " );
         String res = scn.nextLine();
-        
+        String objeto[] = new String[10];
         File doc = new File(res);
-
+        
             BufferedReader obj = new BufferedReader(new FileReader(doc));
             String strng;
             while ((strng = obj.readLine()) != null)
-              System.out.println("\n" + strng);
+            objeto = strng.split(",");
+            Repositorio x = new Repositorio
+            System.out.println("\n" + strng);
             
         }while(cont);
         
