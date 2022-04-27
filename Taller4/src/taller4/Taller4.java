@@ -48,7 +48,7 @@ public class Taller4 {
 
         }while(cont);
         
-        System.out.println(repositorios.get(1));
+        System.out.println(repositorios.get(0));
         
     }
     
