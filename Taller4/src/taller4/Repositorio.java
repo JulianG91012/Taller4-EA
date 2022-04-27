@@ -4,9 +4,16 @@
  */
 package taller4;
 
+import edu.princeton.cs.algs4.StdOut;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.Scanner;
 
 /**
  *
@@ -43,7 +50,7 @@ public class Repositorio
         this.suscribers = suscribers;
     }
     
-    public ArrayList<Repositorio> leerDataset(String ruta){
+    public ArrayList<Repositorio> leerDataset(String ruta) throws ParseException, IOException{
         
         ArrayList <Repositorio> repositorios = new ArrayList<>(); //Luego hay que ponerlo en funcion
         boolean cont = false; //Continuidad del ciclo
@@ -80,6 +87,7 @@ public class Repositorio
         }while(cont);
         
         System.out.println(repositorios.get(0));
+        return repositorios;
     }
             
     
