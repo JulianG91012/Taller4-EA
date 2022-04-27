@@ -1,0 +1,16 @@
+14098069,free-programming-books-zh_CN,justjavac/free-programming-books-zh_CN,justjavac,null,User,2013-11-04 01:59:19,25155,87946,28,5917 
+24195339,angular,angular/angular,angular,TypeScript,Organization,2014-09-18 16:12:01,21048,80075,1598,3109 
+54173593,storybook,storybookjs/storybook,storybookjs,TypeScript,Organization,2016-03-18 04:23:44,7166,69227,1714,929
+52631841,realworld,gothinkster/realworld,gothinkster,Shell,Organization,2016-02-26 20:49:53,5937,64393,64,1579 
+460078,angular.js,angular/angular.js,angular,JavaScript,Organization,2010-01-06 00:34:37,28373,59529,469,3874 
+147350463,33-js-concepts,leonardomso/33-js-concepts,leonardomso,JavaScript,User,2018-09-04 13:27:04,6411,47595,12,1291 
+12256376,ionic-framework,ionic-team/ionic-framework,ionic-team,TypeScript,Organization,2013-08-20 23:06:02,13604,46507,648,1682 
+75104123,prettier,prettier/prettier,prettier,JavaScript,Organization,2016-11-29 17:13:37,3206,42092,1023,410 
+6988020,sheetjs,SheetJS/sheetjs,SheetJS,JavaScript,Organization,2012-12-03 19:25:52,7477,29281,116,594 
+1844251,todomvc,tastejs/todomvc,tastejs,JavaScript,Organization,2011-06-03 19:56:33,13919,27702,187,1152 
+36891867,angular-cli,angular/angular-cli,angular,TypeScript,Organization,2015-06-04 19:49:37,12145,25249,256,1062 
+22362099,angular-styleguide,johnpapa/angular-styleguide,johnpapa,null,User,2014-07-29 00:07:51,4330,24130,80,1375 
+59652928,ngx-admin,akveo/ngx-admin,akveo,TypeScript,Organization,2016-05-25 10:09:03,7500,23469,444,909 
+49016322,components,angular/components,angular,TypeScript,Organization,2016-01-04 18:50:02,6047,22535,1940,960 
+31492490,NativeScript,NativeScript/NativeScript,NativeScript,TypeScript,Organization,2015-03-01 09:47:08,1563,20971,908,689 
+13753636,generator-jhipster,jhipster/generator-jhipster,jhipster,JavaScript,Organization,2013-10-21 20:07:22,3795,19354,251,757 

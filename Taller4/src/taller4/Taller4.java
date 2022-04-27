@@ -22,31 +22,35 @@ public class Taller4 {
      */
     public static void main(String[] args)throws Exception
     {
-        ArrayList <Repositorio> repositorios = new ArrayList<>();
+        ArrayList <Repositorio> repositorios = new ArrayList<>(); //Luego hay que ponerlo en funcion
         boolean cont = false; //Continuidad del ciclo
-        Scanner scn = new Scanner(System.in);
+        Scanner scn = new Scanner(System.in); //Lectura de teclado
         //Se lee el archivo y se llena el array list
         do{
             StdOut.println("Ingrese la ruta del archivo: " );
             String res = scn.nextLine();
-            //
-            String objeto[] = new String[10];
-            File doc = new File(res);
-            SimpleDateFormat formato1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            BufferedReader obj = new BufferedReader(new FileReader(doc));
-            String strng;
-            String[] last = new String[1];
-            Date fecha; 
-            while ((strng = obj.readLine()) != null){
-                objeto = strng.split(",");
-                last = objeto[10].split(" ");
-                objeto[10] = last[0];
-                fecha = formato1.parse(objeto[6]);
-                Repositorio x = new Repositorio(Integer.parseInt(objeto[0]),objeto[1],objeto[2],objeto[3]
-                        ,objeto[4],objeto[5],fecha,Integer.parseInt(objeto[7])
-                        ,Integer.parseInt(objeto[8]),Integer.parseInt(objeto[9]),Integer.parseInt(objeto[10]));
+            String Datos[] = new String[10]; //Datos del archivo
+            File doc = new File(res); //Archivo a leer
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //Formato de la fecha
+            BufferedReader obj = new BufferedReader(new FileReader(doc)); //Se carga el archivo
+            String linea; //Linea a leer del archivo
+            String[] last = new String[1]; //Arreglo del ultimo caracter
+            Date fecha; //Fecha Parseada
+            
+            //Ciclo de lectura del archivo
+            while ((linea = obj.readLine()) != null){
                 
+                Datos = linea.split(",");//Separacion de datos
+                last = Datos[10].split(" "); //Arreglo del ultimo espacio
+                Datos[10] = last[0]; //Asignacion del nuevo dato final
+                fecha = formatoFecha.parse(Datos[6]); //Asignacion de la fecha
                 
+                //Creacion del repositorio
+                Repositorio x = new Repositorio(Integer.parseInt(Datos[0]),Datos[1],Datos[2],Datos[3]
+                        ,Datos[4],Datos[5],fecha,Integer.parseInt(Datos[7])
+                        ,Integer.parseInt(Datos[8]),Integer.parseInt(Datos[9]),Integer.parseInt(Datos[10]));
+                
+                //Añadidura del repositorio
                 repositorios.add(x);
 
         }
