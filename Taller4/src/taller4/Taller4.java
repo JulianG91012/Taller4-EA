@@ -26,6 +26,8 @@ public class Taller4 {
         boolean cont = false; //Continuidad del ciclo
         Scanner scn = new Scanner(System.in); //Lectura de teclado
         ST<String, Bag<Repositorio>> st =  new ST<String, Bag<Repositorio>>(); //Tabla de simbolos
+        ST<String, Bag<Repositorio>> st_lenguaje =  new ST<String, Bag<Repositorio>>(); //Tabla de simbolos
+
         Bag<Repositorio> bag = new Bag<Repositorio>(); //Bolsa de repositorios
         
         //Llenado del arraylist de repositorios
@@ -46,7 +48,21 @@ public class Taller4 {
                   // C:\\Users\\JaegerJK\\Documents\\GitHub\\Taller4-EA\\github-dataset-fixed.txt
         }
         
+        for(Repositorio re: repos){
+        Bag<Repositorio> auxiliar = new Bag<Repositorio>(); //bolsa auxiliar, se crea vacía
+         if(st_lenguaje.contains(re.language)){
+                st_lenguaje.get(re.language).add(re); //si el usuario ya existe en la tabla, solo añade re a la bolsa
+                //st.put(re.user_name, st.get(re.user_name);
+            }else{
+            auxiliar.add(re);
+            st_lenguaje.put(re.language,auxiliar); //crea una fila en la tabla con re 
+            }
+                  // C:\\Users\\JaegerJK\\Documents\\GitHub\\Taller4-EA\\github-dataset-fixed.txt
+        }
+        
+        
         consultaPorUsuario(st);
+        
         
         String usuarioAnterior, nuevoUsuario;
         //Llenado de la bolsa de los usuarios
