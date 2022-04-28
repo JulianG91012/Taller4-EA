@@ -27,6 +27,7 @@ public class Taller4 {
         Scanner scn = new Scanner(System.in); //Lectura de teclado
         ST<String, Bag<Repositorio>> st =  new ST<String, Bag<Repositorio>>(); //Tabla de simbolos
         ST<String, Bag<Repositorio>> st_lenguaje =  new ST<String, Bag<Repositorio>>(); //Tabla de simbolos
+        BST<String, MinPQ<Repositorio>> bst = new BST<String, MinPQ<Repositorio>>();
 
         Bag<Repositorio> bag = new Bag<Repositorio>(); //Bolsa de repositorios
         
@@ -63,10 +64,10 @@ public class Taller4 {
         
         consultaPorUsuario(st);
         
-        
-        String usuarioAnterior, nuevoUsuario;
+        bst = rankingsPorLenguaje(st_lenguaje);
+        //String usuarioAnterior, nuevoUsuario;
         //Llenado de la bolsa de los usuarios
-        usuarioAnterior = repos.get(0).user_name;
+        //usuarioAnterior = repos.get(0).user_name;
         /*
         for(int i = 0; i<repos.size(); i++){
             if(!repos.get(i).user_name.equals(usuarioAnterior)){
@@ -79,8 +80,8 @@ public class Taller4 {
             }
         }
         */
-        StdOut.println("Ingrese el nombre del usuario: " );
-        res = scn.nextLine();
+        //StdOut.println("Ingrese el nombre del usuario: " );
+        //res = scn.nextLine();
            
     }
     static void consultaPorUsuario(ST<String, Bag<Repositorio>> st){
@@ -146,5 +147,19 @@ public class Taller4 {
         return repositorios;
         
         
+    }
+
+    public static BST<String, MinPQ<Repositorio>> rankingsPorLenguaje(ST<String,Bag<Repositorio>> repoXlenguaje){
+        BST<String, MinPQ<Repositorio>> bst = new BST<String, MinPQ<Repositorio>>();
+        int M = 10;
+        for(String lenguaje : repoXlenguaje.keys()){
+        MinPQ<Repositorio> aux = new MinPQ<>();
+        for(Repositorio rep : repoXlenguaje.get(lenguaje)){
+            aux.insert(rep); 
+            if(aux.size() > M){ aux.delMin();}
+            }
+        bst.put(lenguaje, aux);            
+        }
+        return bst; 
     }
 }
