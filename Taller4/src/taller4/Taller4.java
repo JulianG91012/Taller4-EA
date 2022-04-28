@@ -5,7 +5,7 @@
 package taller4;
 /**
  *
- * @author Julian Gómez Jojo y el gey
+ * @author Julian Esteban Gomez Lopez, Julian Styven Colorado Agudelo, Johana Patricia Jaramillo Espinosa
  */
 import edu.princeton.cs.algs4.*;
 import java.io.*;
@@ -59,31 +59,18 @@ public class Taller4 {
             auxiliar.add(re);
             st_lenguaje.put(re.language,auxiliar); //crea una fila en la tabla con re 
             }
-                  // C:\\Users\\JaegerJK\\Documents\\GitHub\\Taller4-EA\\github-dataset-fixed.txt
         }
-        
-        
+        //Realizar consulta por usuario
         consultaPorUsuario(st);
         
-        bst = rankingsPorLenguaje(st_lenguaje);
-        //String usuarioAnterior, nuevoUsuario;
-        //Llenado de la bolsa de los usuarios
-        //usuarioAnterior = repos.get(0).user_name;
+        //Ver ranking por lenguaje
         /*
-        for(int i = 0; i<repos.size(); i++){
-            if(!repos.get(i).user_name.equals(usuarioAnterior)){
-                nuevoUsuario = repos.get(i).user_name;
-                for(int j=0; j<repos.size(); j++){
-                    if(repos.get(j).user_name.equals(res)){
-                    bag.add(repos.get(i));
-                    }
-                }
-            }
-        }
+        Profe, en este punto el programa no funciona por que los repositorios no son comparables y no 
+        supimos como hacer para que lo fueran.
+        
         */
-        //StdOut.println("Ingrese el nombre del usuario: " );
-        //res = scn.nextLine();
-           
+        bst = rankingsPorLenguaje(st_lenguaje);
+ 
     }
     static void consultaPorUsuario(ST<String, Bag<Repositorio>> st){
         int nro_rep;
@@ -152,15 +139,17 @@ public class Taller4 {
 
     public static BST<String, MinPQ<Repositorio>> rankingsPorLenguaje(ST<String,Bag<Repositorio>> repoXlenguaje){
         BST<String, MinPQ<Repositorio>> bst = new BST<String, MinPQ<Repositorio>>();
-        int M = 10;
-        for(String lenguaje : repoXlenguaje.keys()){
+        
         MinPQ<Repositorio> aux = new MinPQ<>();
+        int M = 10;
+        
+        for(String lenguaje : repoXlenguaje.keys()){
         for(Repositorio rep : repoXlenguaje.get(lenguaje)){
             aux.insert(rep); 
             if(aux.size() > M){ aux.delMin();}
             }
         bst.put(lenguaje, aux);            
         }
-        return bst; 
+        return bst;
     }
 }
