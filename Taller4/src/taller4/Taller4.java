@@ -49,6 +49,7 @@ public class Taller4 {
                   // C:\\Users\\JaegerJK\\Documents\\GitHub\\Taller4-EA\\github-dataset-fixed.txt
         }
         
+        //Se llena la tabla de simbolos por lenguaje
         for(Repositorio re: repos){
         Bag<Repositorio> auxiliar = new Bag<Repositorio>(); //bolsa auxiliar, se crea vacía
          if(st_lenguaje.contains(re.language)){
